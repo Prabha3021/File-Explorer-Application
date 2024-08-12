@@ -45,10 +45,13 @@ cd file-explorer
 Using a C++ compiler, compile the source files.
 
 g++ -o file_explorer main.cpp FileSystem.cpp DirectoryManager.cpp FileManager.cpp SearchManager.cpp PermissionManager.cpp CommandProcessor.cpp Logger.cpp
+
 **4. Run the Application:**
 
 ./file_explorer
+
 **Key Features**
+
 **File Navigation**
 
 •Browse directories and view their contents.
@@ -105,8 +108,11 @@ The application is organized into several key classes, each responsible for spec
 **CommandProcessor:** Interprets and executes user commands.
 
 **Logger**: Records all significant actions within the application to a log file.
+
 **Usage**
+
 **Logger Code**
+
 **Logger Code for this File Explorer Application:**
 
 
@@ -507,55 +513,55 @@ int main() {
 In this C++ FileExplorer class is a well-structured example of a basic file management system, but there are a few areas where improvements and bug fixes could be beneficial. Here’s a bug tracker process, improvement suggestions, and corrections for the code provided
 B**ug Tracker Process**
 1.	**Initial Testing:**
-o	Test all commands (list, cd, copy, move, delete, create, search, chmod) with various inputs.
-o	Verify command parsing and file operations in different scenarios (e.g., non-existent files, invalid paths).
+	Test all commands (list, cd, copy, move, delete, create, search, chmod) with various inputs.
+	Verify command parsing and file operations in different scenarios (e.g., non-existent files, invalid paths).
 2.	**Issue Identification:**
-o	Document any errors or unexpected behavior.
-o	Record specific input that causes issues.
+	Document any errors or unexpected behavior.
+	Record specific input that causes issues.
 1.	**Issue Analysis:**
-o	Analyze the root cause of each issue.
-o	Determine if issues are related to command parsing, file operations, or system calls.
+	Analyze the root cause of each issue.
+	Determine if issues are related to command parsing, file operations, or system calls.
 2.	**Fix Implementation:**
-o	Apply fixes based on the analysis.
-o	Modify code to handle edge cases and errors effectively.
+	Apply fixes based on the analysis.
+	Modify code to handle edge cases and errors effectively.
 3.	**Regression Testing:**
-o	Re-run tests to ensure fixes don’t introduce new issues.
-o	Validate that all commands work as expected after changes.
+	Re-run tests to ensure fixes don’t introduce new issues.
+	Validate that all commands work as expected after changes.
 4.	**Documentation:**
-o	Update code comments and documentation to reflect changes.
-o	Provide clear instructions for using the tool and known limitations.
+	Update code comments and documentation to reflect changes.
+	Provide clear instructions for using the tool and known limitations.
 **Improvements Before and After**
 **Before Improvements**
 1.	**Command Parsing:**
-o	Command parsing does not handle multiple spaces or quotes well.
+	Command parsing does not handle multiple spaces or quotes well.
 2.	**Error Handling:**
-o	Some error messages are generic; more specific messages could help debugging.
+	Some error messages are generic; more specific messages could help debugging.
 3.	**Functionality:**
-o	The searchFiles function may not handle large directories efficiently.
-o	The chmod function assumes that the mode is always provided in octal format and does not validate the mode.
+	The searchFiles function may not handle large directories efficiently.
+	The chmod function assumes that the mode is always provided in octal format and does not validate the mode.
 4.**Edge Cases:**
-o	The code doesn’t check if files or directories exist before performing operations.
-o	The createFile function overwrites existing files without warning.
+	The code doesn’t check if files or directories exist before performing operations.
+	The createFile function overwrites existing files without warning.
 **After Improvements**
 1.	**Enhanced Command Parsing:**
-o	Improve command parsing to handle edge cases and validate inputs.
+	Improve command parsing to handle edge cases and validate inputs.
 2.	**Improved Error Handling:**
-o	Add more descriptive error messages and handle specific error codes.
+	Add more descriptive error messages and handle specific error codes.
 3.	**Enhanced Functionality:**
-o	Improve the efficiency of the searchFiles function for large directories.
-o	Validate file existence before performing operations.
+	Improve the efficiency of the searchFiles function for large directories.
+	Validate file existence before performing operations.
 4.	**Handle Edge Cases:**
-o	Add checks for file and directory existence.
-o	Avoid overwriting existing files in createFile without a warning.
+	Add checks for file and directory existence.
+	Avoid overwriting existing files in createFile without a warning.
 **Code Issues and Corrections**
 1.	**issue with parseCommand Method:**
-o	parseCommand might produce an incorrect number of tokens, especially if there are multiple spaces between tokens.
+	parseCommand might produce an incorrect number of tokens, especially if there are multiple spaces between tokens.
 **Handling chmod Input:**
-•	Ensure that the mode is valid and handle invalid inputs.
+	Ensure that the mode is valid and handle invalid inputs.
 **createFile Overwrite Warning:**
-•	Add a check to avoid overwriting existing files without user confirmation
+	Add a check to avoid overwriting existing files without user confirmation
 **Search Efficiency:**
-•	Consider improving search efficiency for large directories, e.g., by limiting recursion depth or using multi-threading.
+	Consider improving search efficiency for large directories, e.g., by limiting recursion depth or using multi-threading.
 **Summary**
 •	Bug Tracker Process: Identify, analyze, fix, test, and document bugs.
 •	Improvements: Better command parsing, error handling, and functionality.
@@ -577,6 +583,7 @@ Send in a pull request to be evaluated.
 This '**File exploring Application'** project is licensed under the our group. See the LICENSE file for details.
 
 **References**
+
 •Google: For general research and problem-solving.
 
 •YouTube: For tutorials and visual learning.
