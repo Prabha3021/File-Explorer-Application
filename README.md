@@ -25,8 +25,7 @@ This File Explorer application is a multifunctional tool for effective file and 
 **Project Submission By:**
 
 **Chitikela. Prabhakararao**
-
-**Rajupalem. Srivathasa**
+and **Rajupalem. Srivathasa**
 
 
 **Installation**
