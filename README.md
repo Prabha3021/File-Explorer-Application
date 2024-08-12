@@ -510,87 +510,57 @@ int main() {
 
 **Bug Tracker for File Explorer**
 
+**Bug Tracker process:**
 In this C++ FileExplorer class is a well-structured example of a basic file management system, but there are a few areas where improvements and bug fixes could be beneficial. Here’s a bug tracker process, improvement suggestions, and corrections for the code provided
 
 **Bug Tracker Process**
 
-1.	**Initial Testing:**
-	Test all commands (list, cd, copy, move, delete, create, search, chmod) with various inputs.
-	Verify command parsing and file operations in different scenarios (e.g., non-existent files, invalid paths).
-2.	**Issue Identification:**
-	Document any errors or unexpected behavior.
-	Record specific input that causes issues.
-1.	**Issue Analysis:**
-	Analyze the root cause of each issue.
-	Determine if issues are related to command parsing, file operations, or system calls.
-2.	**Fix Implementation:**
-	Apply fixes based on the analysis.
-	Modify code to handle edge cases and errors effectively.
-3.	**Regression Testing:**
-	Re-run tests to ensure fixes don’t introduce new issues.
-	Validate that all commands work as expected after changes.
-4.	**Documentation:**
-	Update code comments and documentation to reflect changes.
-	Provide clear instructions for using the tool and known limitations.
-**Improvements Before and After**
+**1. Command Parsing Issues**
+•	Issue: Command parsing was not handling multiple spaces or quotes effectively.
+•	Status: Resolved
+•	Details: Improved parseCommand function to handle extra spaces and ensure accurate token extraction.
 
-**Before Improvements**
+**2. Error Handling**
+•	Issue: Generic error messages for file operations; lack of specific error handling.
+•	Status: Resolved
+•	Details: Added specific error messages for file existence checks, permission changes, and file operations. Enhanced error handling for invalid permission modes.
 
-1.	**Command Parsing:**
-	Command parsing does not handle multiple spaces or quotes well.
+**3. File Existence Check**
+•	Issue: Operations like copying, moving, or deleting files did not verify if the file existed.
+•	Status: Resolved
+•	Details: Added fileExists function to check for file existence before performing operations like copy, move, or delete.
 
-2.	**Error Handling:**
-	Some error messages are generic; more specific messages could help debugging.
+**4. File Overwriting Warning**
+•	Issue: createFile function would overwrite existing files without warning.
+•	Status: Resolved
+•	Details: Added a check to ensure files are not overwritten without user notification. Provides a message if the file already exists.
 
-3.	**Functionality:**
-	The searchFiles function may not handle large directories efficiently.
-	The chmod function assumes that the mode is always provided in octal format and does not validate the mode.
+**5. chmod Input Validation**
+•	Issue: chmod function did not validate mode inputs effectively.
+•	Status: Resolved
+•	Details: Added error handling for invalid permission mode inputs and ensured only valid octal permissions are processed.
 
-4.**Edge Cases:**
-	The code doesn’t check if files or directories exist before performing operations.
-	The createFile function overwrites existing files without warning.
+**6. Search Efficiency**
+•	Issue: The searchFiles function might be inefficient for large directories.
+•	Status: Pending
+•	Details: Consider potential optimizations like limiting recursion depth or using multi-threading to handle large directories more efficiently.
 
-**After Improvements**
+**7. Command Parsing Edge Cases**
+•	Issue: Edge cases in command parsing were not handled.
+•	Status: Resolved
+•	Details: Enhanced parseCommand to better handle various edge cases, including multiple spaces and empty tokens.
 
 
-1.	**Enhanced Command Parsing:**
-	Improve command parsing to handle edge cases and validate inputs.
+**Summary of Fixes**
+•	Command Parsing: Improved handling of tokens.
+•	Error Handling: Added specific messages for errors.
+•	File Operations: Implemented checks for file existence and avoid overwriting files without warning.
+•	Permissions: Enhanced validation and error handling for permission changes.
 
-2.	**Improved Error Handling:**
-	Add more descriptive error messages and handle specific error codes.
-
-3.	**Enhanced Functionality:**
-   Improve the efficiency of the searchFiles function for large directories.
-	Validate file existence before performing operations.
-
-4.	**Handle Edge Cases:**
-	Add checks for file and directory existence.
-	Avoid overwriting existing files in createFile without a warning.
-
-**Code Issues and Corrections**
-
-1.	**issue with parseCommand Method:**
-	parseCommand might produce an incorrect number of tokens, especially if there are multiple spaces between tokens.
-
-**Handling chmod Input:**
-	Ensure that the mode is valid and handle invalid inputs.
-
-**createFile Overwrite Warning:**
-	Add a check to avoid overwriting existing files without user confirmation
-
-**Search Efficiency:**
-	Consider improving search efficiency for large directories, e.g., by limiting recursion depth or using multi-threading.
-
-
-**Summary**
-
-•	Bug Tracker Process: Identify, analyze, fix, test, and document bugs.
-
-•	Improvements: Better command parsing, error handling, and functionality.
-
-•	Corrections: Check file existence, handle invalid inputs, and avoid overwriting files without warning.
-
-By implementing these changes, This FileExplorer class should become more robust and user-friendly.
+**Next Steps**
+•	Search Efficiency: Investigate and implement optimizations for large directory searches.
+•	Testing: Continue comprehensive testing to ensure all edge cases are covered and no new issues are introduced.
+This report summarizes the status of identified bugs, their resolutions, and any pending issues that need further attention.
 
 
 **Contributing**
