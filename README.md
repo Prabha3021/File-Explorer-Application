@@ -248,15 +248,25 @@ int main() {
 }
 
 **Output of Logger Code**
+
 2024-08-12 05:44:43 [INFO] FileExplorer: Day 1: Starting basic file operations.
+
 2024-08-12 05:44:43 [DEBUG] FileExplorer: Listed files in directory '/home/user'
+
 2024-08-12 05:44:43 [INFO] FileExplorer: Day 2: Implementing directory navigation.
+
 2024-08-12 05:44:43 [DEBUG] FileExplorer: Navigated to directory '/home/user/documents'
+
 2024-08-12 05:44:43 [INFO] FileExplorer: Day 3: Adding file manipulation capabilities.
+
 2024-08-12 05:44:43 [DEBUG] FileExplorer: Copied file 'example.txt' to '/home/user/documents/example_copy.txt'
+
 2024-08-12 05:44:43 [INFO] FileExplorer: Day 4: Implementing file search functionality.
+
 2024-08-12 05:44:43 [DEBUG] FileExplorer: Searched for 'report.docx' in '/home/user'
+
 2024-08-12 05:44:43 [INFO] FileExplorer: Day 5: Adding file permission management features.
+
 2024-08-12 05:44:43 [DEBUG] FileExplorer: Changed permissions of 'example.txt' to 'rwxr-xr-x'
 
 
@@ -305,44 +315,76 @@ public:
     }
 
 private:
+  
     void executeCommand(const std::string& command) {
-        if (command == "list") {
-            listFiles();
-        } else if (command.substr(0, 3) == "cd ") {
-            changeDirectory(command.substr(3));
-        } else if (command.substr(0, 4) == "copy") {
+    
+	if (command == "list") {
+        
+	    listFiles();
+        
+	} else if (command.substr(0, 3) == "cd ") {
+        
+	    changeDirectory(command.substr(3));
+        
+	} else if (command.substr(0, 4) == "copy") {
             auto args = parseCommand(command);
             if (args.size() == 3) {
                 copyFile(args[1], args[2]);
             }
-        } else if (command.substr(0, 4) == "move") {
-            auto args = parseCommand(command);
-            if (args.size() == 3) {
-                moveFile(args[1], args[2]);
+        
+	} else if (command.substr(0, 4) == "move") {
+         
+	    auto args = parseCommand(command);
+            
+	    if (args.size() == 3) {
+            
+		moveFile(args[1], args[2]);
             }
-        } else if (command.substr(0, 6) == "delete") {
-            auto args = parseCommand(command);
-            if (args.size() == 2) {
-                deleteFile(args[1]);
+        } 
+	else if (command.substr(0, 6) == "delete") {
+        
+	    auto args = parseCommand(command);
+            
+	    if (args.size() == 2) {
+            
+		deleteFile(args[1]);
             }
-        } else if (command.substr(0, 6) == "create") {
-            auto args = parseCommand(command);
-            if (args.size() == 2) {
-                createFile(args[1]);
+        } 
+	else if (command.substr(0, 6) == "create") {
+        
+	    auto args = parseCommand(command);
+            
+	    if (args.size() == 2) {
+            
+		createFile(args[1]);
             }
-        } else if (command.substr(0, 6) == "search") {
-            auto args = parseCommand(command);
-            if (args.size() == 2) {
-                searchFiles(currentDirectory, args[1]);
+	    
+        } 
+	else if (command.substr(0, 6) == "search") {
+        
+	    auto args = parseCommand(command);
+            
+	    if (args.size() == 2) {
+            
+		searchFiles(currentDirectory, args[1]);
             }
-        } else if (command.substr(0, 4) == "chmod") {
-            auto args = parseCommand(command);
-            if (args.size() == 3) {
-                setPermissions(args[1], args[2]);
+	    
+        } 
+	else if (command.substr(0, 4) == "chmod") {
+        
+	    auto args = parseCommand(command);
+            
+	    if (args.size() == 3) {
+            
+		setPermissions(args[1], args[2]);
             }
-        } else {
-            std::cout << "Unknown command: " << command << std::endl;
+	    
+        } 
+	else {
+        
+	    std::cout << "Unknown command: " << command << std::endl;
         }
+	
     }
 
     void listFiles() {
