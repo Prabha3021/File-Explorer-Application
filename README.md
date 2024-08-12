@@ -511,7 +511,9 @@ int main() {
 **Bug Tracker for File Explorer**
 
 In this C++ FileExplorer class is a well-structured example of a basic file management system, but there are a few areas where improvements and bug fixes could be beneficial. Here’s a bug tracker process, improvement suggestions, and corrections for the code provided
-B**ug Tracker Process**
+
+**Bug Tracker Process**
+
 1.	**Initial Testing:**
 	Test all commands (list, cd, copy, move, delete, create, search, chmod) with various inputs.
 	Verify command parsing and file operations in different scenarios (e.g., non-existent files, invalid paths).
@@ -531,51 +533,77 @@ B**ug Tracker Process**
 	Update code comments and documentation to reflect changes.
 	Provide clear instructions for using the tool and known limitations.
 **Improvements Before and After**
+
 **Before Improvements**
+
 1.	**Command Parsing:**
 	Command parsing does not handle multiple spaces or quotes well.
+
 2.	**Error Handling:**
 	Some error messages are generic; more specific messages could help debugging.
+
 3.	**Functionality:**
 	The searchFiles function may not handle large directories efficiently.
 	The chmod function assumes that the mode is always provided in octal format and does not validate the mode.
+
 4.**Edge Cases:**
 	The code doesn’t check if files or directories exist before performing operations.
 	The createFile function overwrites existing files without warning.
+
 **After Improvements**
+
+
 1.	**Enhanced Command Parsing:**
 	Improve command parsing to handle edge cases and validate inputs.
+
 2.	**Improved Error Handling:**
 	Add more descriptive error messages and handle specific error codes.
+
 3.	**Enhanced Functionality:**
-	Improve the efficiency of the searchFiles function for large directories.
+   Improve the efficiency of the searchFiles function for large directories.
 	Validate file existence before performing operations.
+
 4.	**Handle Edge Cases:**
 	Add checks for file and directory existence.
 	Avoid overwriting existing files in createFile without a warning.
+
 **Code Issues and Corrections**
+
 1.	**issue with parseCommand Method:**
 	parseCommand might produce an incorrect number of tokens, especially if there are multiple spaces between tokens.
+
 **Handling chmod Input:**
 	Ensure that the mode is valid and handle invalid inputs.
+
 **createFile Overwrite Warning:**
 	Add a check to avoid overwriting existing files without user confirmation
+
 **Search Efficiency:**
 	Consider improving search efficiency for large directories, e.g., by limiting recursion depth or using multi-threading.
-**Summary**
-•	Bug Tracker Process: Identify, analyze, fix, test, and document bugs.
-•	Improvements: Better command parsing, error handling, and functionality.
-•	Corrections: Check file existence, handle invalid inputs, and avoid overwriting files without warning.
-By implementing these changes, This FileExplorer class should become more robust and user-friendly.
 
+
+**Summary**
+
+•	Bug Tracker Process: Identify, analyze, fix, test, and document bugs.
+
+•	Improvements: Better command parsing, error handling, and functionality.
+
+•	Corrections: Check file existence, handle invalid inputs, and avoid overwriting files without warning.
+
+By implementing these changes, This FileExplorer class should become more robust and user-friendly.
 
 
 **Contributing**
 
+
 Contributions are welcome! Please follow these steps:
+
 Create a fork in the repository.
+
 To address a feature or defect, create a new branch.
+
 After making your modifications, make sure the program compiles and functions properly.
+
 Send in a pull request to be evaluated.
 
 **License**
