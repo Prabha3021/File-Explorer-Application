@@ -4,6 +4,7 @@
 This File Explorer application is a multifunctional tool for effective file and directory management. It has extensive file manipulation features, including the ability to create, move, copy, and delete files. In addition to managing permissions, processing commands, and having a robust search feature, the application also keeps a thorough activity log.
 
 **Table of Contents**
+
 •Installation
 
 •Key Features
@@ -489,12 +490,19 @@ private:
 };
 
 int main() {
+    
     FileExplorer explorer;
+    
     explorer.start();
+    
     return 0;
 }
+
+
 **Output of ThiS code:**
+
 ![WhatsApp Image 2024-08-12 at 11 34 50_59545530](https://github.com/user-attachments/assets/0e8545ef-6057-4d96-b2d8-db0061287bf8)
+
 **Bug Tracker for File Explorer**
 
 In this C++ FileExplorer class is a well-structured example of a basic file management system, but there are a few areas where improvements and bug fixes could be beneficial. Here’s a bug tracker process, improvement suggestions, and corrections for the code provided
@@ -529,7 +537,7 @@ o	The chmod function assumes that the mode is always provided in octal format an
 4.**Edge Cases:**
 o	The code doesn’t check if files or directories exist before performing operations.
 o	The createFile function overwrites existing files without warning.
-After Improvements
+**After Improvements**
 1.	**Enhanced Command Parsing:**
 o	Improve command parsing to handle edge cases and validate inputs.
 2.	**Improved Error Handling:**
@@ -540,7 +548,7 @@ o	Validate file existence before performing operations.
 4.	**Handle Edge Cases:**
 o	Add checks for file and directory existence.
 o	Avoid overwriting existing files in createFile without a warning.
-Code Issues and Corrections
+**Code Issues and Corrections**
 1.	**issue with parseCommand Method:**
 o	parseCommand might produce an incorrect number of tokens, especially if there are multiple spaces between tokens.
 **Handling chmod Input:**
