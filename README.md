@@ -22,11 +22,14 @@ This File Explorer application is a multifunctional tool for effective file and 
 •Reference
 
 **Project Submission By:**
+
 **Chitikela. Prabhakararao**
 
 **Rajupalem. Srivathasa**
 
+
 **Installation**
+
 1.**Clone the Repository:**
 
 bash
@@ -258,15 +261,25 @@ int main() {
 
 
 **FileExplorer.cpp** code:
+
 #include <iostream>
+
 #include <string>
+
 #include <dirent.h>
+
 #include <unistd.h>
+
 #include <sys/stat.h>
+
 #include <fcntl.h>
+
 #include <cstring>
+
 #include <vector>
+
 #include <fstream>
+
 #include <sstream>  // Include this for std::istringstream
 
 class FileExplorer {
@@ -503,6 +516,7 @@ By implementing these changes, This FileExplorer class should become more robust
 
 
 **Contributing**
+
 Contributions are welcome! Please follow these steps:
 Create a fork in the repository.
 To address a feature or defect, create a new branch.
@@ -510,6 +524,7 @@ After making your modifications, make sure the program compiles and functions pr
 Send in a pull request to be evaluated.
 
 **License**
+
 This '**File exploring Application'** project is licensed under the our group. See the LICENSE file for details.
 
 **References**
