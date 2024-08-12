@@ -23,6 +23,7 @@ This File Explorer application is a multifunctional tool for effective file and 
 
 **Project Submission By:**
 **Chitikela. Prabhakararao**
+
 **Rajupalem. Srivathasa**
 
 **Installation**
@@ -30,7 +31,7 @@ This File Explorer application is a multifunctional tool for effective file and 
 
 bash
 
-git clone:
+git clone:  https://github.com/Prabha3021/File-Explorer-Application/blob/main/Capstone%20Project%20Cpp%20code.docx
 
 **2.Navigate to the Project Directory:**
 
@@ -383,14 +384,17 @@ int main() {
 }
 **Output of ThiS code:**
 ![WhatsApp Image 2024-08-12 at 11 34 50_59545530](https://github.com/user-attachments/assets/0e8545ef-6057-4d96-b2d8-db0061287bf8)
+
 **Contributing**
 Contributions are welcome! Please follow these steps:
 Create a fork in the repository.
 To address a feature or defect, create a new branch.
 After making your modifications, make sure the program compiles and functions properly.
 Send in a pull request to be evaluated.
+
 **License**
 This '**File exploring Application'** project is licensed under the our group. See the LICENSE file for details.
+
 **References**
 •Google: For general research and problem-solving.
 
