@@ -1,7 +1,9 @@
 **File Explorer Application Project**
+
 **Description**
 This File Explorer application is a multifunctional tool for effective file and directory management. It has extensive file manipulation features, including the ability to create, move, copy, and delete files. In addition to managing permissions, processing commands, and having a robust search feature, the application also keeps a thorough activity log.
-Table of Contents
+
+**Table of Contents**
 •Installation
 
 •Key Features
@@ -18,15 +20,18 @@ Table of Contents
 •License
 
 •Reference
+
 **Project Submission By:**
 **Chitikela. Prabhakararao**
 **Rajupalem. Srivathasa**
+
 **Installation**
 1.**Clone the Repository:**
 
 bash
 
 git clone:
+
 **2.Navigate to the Project Directory:**
 
 cd file-explorer
@@ -99,6 +104,8 @@ The application is organized into several key classes, each responsible for spec
 **Usage**
 **Logger Code**
 **Logger Code for this File Explorer Application:**
+
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -179,6 +186,7 @@ int main() {
     logger.debug("Changed permissions of 'example.txt' to 'rwxr-xr-x'");
     return 0;
 }
+
 **Output of Logger Code**
 2024-08-12 05:44:43 [INFO] FileExplorer: Day 1: Starting basic file operations.
 2024-08-12 05:44:43 [DEBUG] FileExplorer: Listed files in directory '/home/user'
@@ -190,6 +198,7 @@ int main() {
 2024-08-12 05:44:43 [DEBUG] FileExplorer: Searched for 'report.docx' in '/home/user'
 2024-08-12 05:44:43 [INFO] FileExplorer: Day 5: Adding file permission management features.
 2024-08-12 05:44:43 [DEBUG] FileExplorer: Changed permissions of 'example.txt' to 'rwxr-xr-x'
+
 
 **FileExplorer.cpp** code:
 #include <iostream>
