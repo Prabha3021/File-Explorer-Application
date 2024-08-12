@@ -511,23 +511,33 @@ int main() {
 **Bug Tracker for File Explorer**
 
 **Bug Tracker process:**
+
 In this C++ FileExplorer class is a well-structured example of a basic file management system, but there are a few areas where improvements and bug fixes could be beneficial. Here’s a bug tracker process, improvement suggestions, and corrections for the code provided
 
 **Bug Tracker Process**
 
 **1. Command Parsing Issues**
+
 •	Issue: Command parsing was not handling multiple spaces or quotes effectively.
+
 •	Status: Resolved
+
 •	Details: Improved parseCommand function to handle extra spaces and ensure accurate token extraction.
 
 **2. Error Handling**
+
 •	Issue: Generic error messages for file operations; lack of specific error handling.
+
 •	Status: Resolved
+
 •	Details: Added specific error messages for file existence checks, permission changes, and file operations. Enhanced error handling for invalid permission modes.
 
 **3. File Existence Check**
+
 •	Issue: Operations like copying, moving, or deleting files did not verify if the file existed.
+
 •	Status: Resolved
+
 •	Details: Added fileExists function to check for file existence before performing operations like copy, move, or delete.
 
 **4. File Overwriting Warning**
@@ -536,18 +546,29 @@ In this C++ FileExplorer class is a well-structured example of a basic file mana
 •	Details: Added a check to ensure files are not overwritten without user notification. Provides a message if the file already exists.
 
 **5. chmod Input Validation**
+
 •	Issue: chmod function did not validate mode inputs effectively.
+
 •	Status: Resolved
+
 •	Details: Added error handling for invalid permission mode inputs and ensured only valid octal permissions are processed.
 
+
 **6. Search Efficiency**
+
 •	Issue: The searchFiles function might be inefficient for large directories.
+
 •	Status: Pending
+
 •	Details: Consider potential optimizations like limiting recursion depth or using multi-threading to handle large directories more efficiently.
 
+
 **7. Command Parsing Edge Cases**
+
 •	Issue: Edge cases in command parsing were not handled.
+
 •	Status: Resolved
+
 •	Details: Enhanced parseCommand to better handle various edge cases, including multiple spaces and empty tokens.
 
 
@@ -557,8 +578,11 @@ In this C++ FileExplorer class is a well-structured example of a basic file mana
 •	File Operations: Implemented checks for file existence and avoid overwriting files without warning.
 •	Permissions: Enhanced validation and error handling for permission changes.
 
+
 **Next Steps**
+
 •	Search Efficiency: Investigate and implement optimizations for large directory searches.
+
 •	Testing: Continue comprehensive testing to ensure all edge cases are covered and no new issues are introduced.
 This report summarizes the status of identified bugs, their resolutions, and any pending issues that need further attention.
 
