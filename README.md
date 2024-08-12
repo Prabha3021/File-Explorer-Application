@@ -31,7 +31,7 @@ This File Explorer application is a multifunctional tool for effective file and 
 
 bash
 
-git clone:  https://github.com/Prabha3021/File-Explorer-Application/blob/main/Capstone%20Project%20Cpp%20code.docx
+git clone: https://github.com/Prabha3021/File-Explorer-Application
 
 **2.Navigate to the Project Directory:**
 
@@ -117,9 +117,13 @@ The application is organized into several key classes, each responsible for spec
  * @brief Simple Logger class for file and console logging
  */
 class SimpleLogger {
+
 public:
+
     enum Level { DEBUG, INFO, NOTICE, WARNING, ERROR, CRITICAL };
+
     SimpleLogger(const std::string& name) : mName(name) {
+
         mLogFile.open("file_explorer_log.txt", std::ios::out | std::ios::app);
     }
     ~SimpleLogger() {
@@ -128,64 +132,116 @@ public:
         }
     }
 
+   
     void log(Level level, const std::string& message) {
+    
         std::string levelStr = getLevelString(level);
+        
         std::string logMessage = getCurrentTime() + " [" + levelStr + "] " + mName + ": " + message;
-        std::cout << logMessage << std::endl; // Print to console
-        if (mLogFile.is_open()) {
-            mLogFile << logMessage << std::endl; // Write to file
+        
+       
+		std::cout << logMessage << std::endl; // Print to console
+        
+		if (mLogFile.is_open()) {
+        
+			mLogFile << logMessage << std::endl; // Write to file
         }
     }
-    void debug(const std::string& message) { log(DEBUG, message); }
-    void info(const std::string& message) { log(INFO, message); }
-    void notice(const std::string& message) { log(NOTICE, message); }
-    void warning(const std::string& message) { log(WARNING, message); }
-    void error(const std::string& message) { log(ERROR, message); }
-    void critical(const std::string& message) { log(CRITICAL, message); }
+    
+	void debug(const std::string& message) { log(DEBUG, message); }
+    
+	void info(const std::string& message) { log(INFO, message); }
+    
+	void notice(const std::string& message) { log(NOTICE, message); }
+    
+	void warning(const std::string& message) { log(WARNING, message); }
+    
+	void error(const std::string& message) { log(ERROR, message); }
+    
+	void critical(const std::string& message) { log(CRITICAL, message); }
+
 private:
-    std::string mName;
-    std::ofstream mLogFile;
-    std::string getLevelString(Level level) {
-        switch (level) {
-            case DEBUG: return "DEBUG";
-            case INFO: return "INFO";
-            case NOTICE: return "NOTICE";
-            case WARNING: return "WARNING";
-            case ERROR: return "ERROR";
-            case CRITICAL: return "CRITICAL";
-            default: return "UNKNOWN";
+
+	std::string mName;
+    
+	std::ofstream mLogFile;
+    
+	std::string getLevelString(Level level) {
+    
+		switch (level) {
+        
+			case DEBUG: return "DEBUG";
+            
+			
+   case INFO: return "INFO";
+   
+			case NOTICE: return "NOTICE";
+            
+			case WARNING: return "WARNING";
+            
+			case ERROR: return "ERROR";
+            
+			case CRITICAL: return "CRITICAL";
+            
+			default: return "UNKNOWN";
         }
     }
 
-    std::string getCurrentTime() {
-        std::time_t now = std::time(nullptr);
-        std::tm* localTime = std::localtime(&now);
-        std::ostringstream oss;
-        oss << std::put_time(localTime, "%Y-%m-%d %H:%M:%S");
-        return oss.str();
+    
+	std::string getCurrentTime() {
+    
+		std::time_t now = std::time(nullptr);
+        
+		std::tm* localTime = std::localtime(&now);
+        
+		std::ostringstream oss;
+        
+		oss << std::put_time(localTime, "%Y-%m-%d %H:%M:%S");
+        
+		return oss.str();
     }
 };
 /**
+ 
  * @brief Example main function demonstrating logging in a File Explorer Application
+ 
  */
+
 int main() {
-    SimpleLogger logger("FileExplorer");
-    // Day 1: Logging basic file operations
-    logger.info("Day 1: Starting basic file operations.");
-    logger.debug("Listed files in directory '/home/user'");
-    // Day 2: Logging directory navigation
-    logger.info("Day 2: Implementing directory navigation.");
-    logger.debug("Navigated to directory '/home/user/documents'");
-    // Day 3: Logging file manipulation capabilities
-    logger.info("Day 3: Adding file manipulation capabilities.");
-    logger.debug("Copied file 'example.txt' to '/home/user/documents/example_copy.txt'");
-    // Day 4: Logging file search functionality
-    logger.info("Day 4: Implementing file search functionality.");
-    logger.debug("Searched for 'report.docx' in '/home/user'");
-    // Day 5: Logging file permission management
-    logger.info("Day 5: Adding file permission management features.");
-    logger.debug("Changed permissions of 'example.txt' to 'rwxr-xr-x'");
-    return 0;
+
+	SimpleLogger logger("FileExplorer");
+    
+	// Day 1: Logging basic file operations
+    
+	logger.info("Day 1: Starting basic file operations.");
+    
+	logger.debug("Listed files in directory '/home/user'");
+    
+	// Day 2: Logging directory navigation
+    
+	logger.info("Day 2: Implementing directory navigation.");
+    
+	logger.debug("Navigated to directory '/home/user/documents'");
+    
+	// Day 3: Logging file manipulation capabilities
+    
+	logger.info("Day 3: Adding file manipulation capabilities.");
+    
+	logger.debug("Copied file 'example.txt' to '/home/user/documents/example_copy.txt'");
+    
+	// Day 4: Logging file search functionality
+    
+	logger.info("Day 4: Implementing file search functionality.");
+    
+	logger.debug("Searched for 'report.docx' in '/home/user'");
+    
+	// Day 5: Logging file permission management
+    
+	logger.info("Day 5: Adding file permission management features.");
+    
+	logger.debug("Changed permissions of 'example.txt' to 'rwxr-xr-x'");
+    
+	return 0;
 }
 
 **Output of Logger Code**
@@ -384,6 +440,67 @@ int main() {
 }
 **Output of ThiS code:**
 ![WhatsApp Image 2024-08-12 at 11 34 50_59545530](https://github.com/user-attachments/assets/0e8545ef-6057-4d96-b2d8-db0061287bf8)
+**Bug Tracker for File Explorer**
+
+In this C++ FileExplorer class is a well-structured example of a basic file management system, but there are a few areas where improvements and bug fixes could be beneficial. Here’s a bug tracker process, improvement suggestions, and corrections for the code provided
+B**ug Tracker Process**
+1.	**Initial Testing:**
+o	Test all commands (list, cd, copy, move, delete, create, search, chmod) with various inputs.
+o	Verify command parsing and file operations in different scenarios (e.g., non-existent files, invalid paths).
+2.	**Issue Identification:**
+o	Document any errors or unexpected behavior.
+o	Record specific input that causes issues.
+1.	**Issue Analysis:**
+o	Analyze the root cause of each issue.
+o	Determine if issues are related to command parsing, file operations, or system calls.
+2.	**Fix Implementation:**
+o	Apply fixes based on the analysis.
+o	Modify code to handle edge cases and errors effectively.
+3.	**Regression Testing:**
+o	Re-run tests to ensure fixes don’t introduce new issues.
+o	Validate that all commands work as expected after changes.
+4.	**Documentation:**
+o	Update code comments and documentation to reflect changes.
+o	Provide clear instructions for using the tool and known limitations.
+**Improvements Before and After**
+**Before Improvements**
+1.	**Command Parsing:**
+o	Command parsing does not handle multiple spaces or quotes well.
+2.	**Error Handling:**
+o	Some error messages are generic; more specific messages could help debugging.
+3.	**Functionality:**
+o	The searchFiles function may not handle large directories efficiently.
+o	The chmod function assumes that the mode is always provided in octal format and does not validate the mode.
+4.**Edge Cases:**
+o	The code doesn’t check if files or directories exist before performing operations.
+o	The createFile function overwrites existing files without warning.
+After Improvements
+1.	**Enhanced Command Parsing:**
+o	Improve command parsing to handle edge cases and validate inputs.
+2.	**Improved Error Handling:**
+o	Add more descriptive error messages and handle specific error codes.
+3.	**Enhanced Functionality:**
+o	Improve the efficiency of the searchFiles function for large directories.
+o	Validate file existence before performing operations.
+4.	**Handle Edge Cases:**
+o	Add checks for file and directory existence.
+o	Avoid overwriting existing files in createFile without a warning.
+Code Issues and Corrections
+1.	**issue with parseCommand Method:**
+o	parseCommand might produce an incorrect number of tokens, especially if there are multiple spaces between tokens.
+**Handling chmod Input:**
+•	Ensure that the mode is valid and handle invalid inputs.
+**createFile Overwrite Warning:**
+•	Add a check to avoid overwriting existing files without user confirmation
+**Search Efficiency:**
+•	Consider improving search efficiency for large directories, e.g., by limiting recursion depth or using multi-threading.
+**Summary**
+•	Bug Tracker Process: Identify, analyze, fix, test, and document bugs.
+•	Improvements: Better command parsing, error handling, and functionality.
+•	Corrections: Check file existence, handle invalid inputs, and avoid overwriting files without warning.
+By implementing these changes, This FileExplorer class should become more robust and user-friendly.
+
+
 
 **Contributing**
 Contributions are welcome! Please follow these steps:
